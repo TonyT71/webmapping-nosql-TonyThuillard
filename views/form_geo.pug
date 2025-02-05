@@ -1,0 +1,40 @@
+doctype html
+html
+  head
+    title Recherche Géographique
+    style.
+      body {
+        font-family: Arial, sans-serif;
+        margin: 50px;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+      }
+      label, input {
+        margin-bottom: 10px;
+      }
+      button {
+        background-color: #007BFF;
+        color: white;
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+  body
+    h2 Recherche par coordonnées
+    form(action="/geo-search-results-json" method="GET")
+      label(for="latitude") Latitude :
+      input(type="text" id="latitude" name="latitude" required)
+      
+      label(for="longitude") Longitude :
+      input(type="text" id="longitude" name="longitude" required)
+      
+      label(for="radius") Rayon (degré) :
+      input(type="number" id="radius" name="radius" required)
+      
+      button(type="submit") Rechercher
